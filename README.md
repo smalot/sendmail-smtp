@@ -1,5 +1,15 @@
 # Sendmail SMTP
 
+[![Latest Stable Version](https://poser.pugx.org/smalot/sendmail-smtp/v/stable)](https://packagist.org/packages/smalot/sendmail-smtp)
+[![Latest Unstable Version](https://poser.pugx.org/smalot/sendmail-smtp/v/unstable)](https://packagist.org/packages/smalot/sendmail-smtp)
+[![License](https://poser.pugx.org/smalot/sendmail-smtp/license)](https://packagist.org/packages/smalot/sendmail-smtp)
+[![composer.lock](https://poser.pugx.org/smalot/sendmail-smtp/composerlock)](https://packagist.org/packages/smalot/sendmail-smtp)
+
+[![Total Downloads](https://poser.pugx.org/smalot/sendmail-smtp/downloads)](https://packagist.org/packages/smalot/sendmail-smtp)
+[![Monthly Downloads](https://poser.pugx.org/smalot/sendmail-smtp/d/monthly)](https://packagist.org/packages/smalot/sendmail-smtp)
+[![Daily Downloads](https://poser.pugx.org/smalot/sendmail-smtp/d/daily)](https://packagist.org/packages/smalot/sendmail-smtp)
+
+
 PHP wrapper to replace default `/usr/sbin/sendmail` binary to support `smtp`.
 
 Add `smtp` support for basic `mail` function.
