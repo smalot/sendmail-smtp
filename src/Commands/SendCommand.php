@@ -57,6 +57,17 @@ class SendCommand extends Command
     }
 
     /**
+     * @param string $message
+     * @param int $mode
+     */
+    public function debug($message, $mode)
+    {
+        if (!is_null($this->logger)) {
+            $this->logger->debug($message, ['mode' => $mode]);
+        }
+    }
+
+    /**
      * @inheritdoc
      */
     protected function configure()
@@ -85,9 +96,21 @@ class SendCommand extends Command
             $phpMailer->parseMessage($this->getInputContent());
 
             if (!$phpMailer->send()) {
+                if (!is_null($this->logger)) {
+                    $this->logger->warning('An issue occurs while sending mail using SMTP.');
+                }
+
                 return 2;
             }
+
+            if (!is_null($this->logger)) {
+                $this->logger->notice('Mail successfully sent using SMTP.');
+            }
         } catch (\Exception $e) {
+            if (!is_null($this->logger)) {
+                $this->logger->error('Internal error.');
+            }
+
             return 1;
         }
 
@@ -102,6 +125,7 @@ class SendCommand extends Command
     {
         $phpMailer = new PHPMailer();
         $phpMailer->isSMTP();
+        $phpMailer->Debugoutput = [$this, 'debug'];
 
         // Set default values.
         $phpMailer->Host = 'localhost';

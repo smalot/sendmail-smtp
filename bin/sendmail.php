@@ -33,8 +33,8 @@ use Smalot\Smtp\Sendmail\Commands\SendCommand;
 use Smalot\Smtp\Sendmail\Commands\UpdateCommand;
 use Symfony\Component\Console\Application;
 
-$handler = new SyslogHandler('sendmail');
-$logger = new Logger('sendmail', [$handler]);
+$handler = new SyslogHandler('sendmail-smtp');
+$logger = new Logger('send', [$handler]);
 $command = new SendCommand($logger);
 
 $application = new Application('sendmail-smtp', '@git-version@');

@@ -2,6 +2,7 @@
 
 PHP wrapper to replace default `/usr/sbin/sendmail` binary to support `smtp`.
 
+Add `smtp` support for basic `mail` function.
 
 # Setup
 
@@ -38,9 +39,18 @@ The [`sendmail_path`](http://php.net/manual/en/ini.list.php) is a **[PHP_INI_SYS
 
 
 
-# Full config file
+# Config file
 
-File to store config : `/etc/sendmail-smtp.yml`
+File to store config : `/etc/sendmail-smtp.yml`.
+
+You can however place the config file in another folder by specifying it in the `sendmail_path` value.
+
+````ini
+sendmail_path = "/path/to/phar/sendmail.phar -f /config/folder/sendmail.yml"
+````
+
+
+## Full details
 
 ````yaml
 # SMTP hosts.
