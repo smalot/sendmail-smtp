@@ -10,11 +10,13 @@
 [![Daily Downloads](https://poser.pugx.org/smalot/sendmail-smtp/d/daily)](https://packagist.org/packages/smalot/sendmail-smtp)
 
 
-PHP wrapper to replace default `/usr/sbin/sendmail` binary to support `smtp`.
+PHP wrapper which replace default `/usr/sbin/sendmail` to add `smtp` support.
 
 Add `smtp` support for basic `mail` function.
 
+
 # Setup
+
 
 ## Download command line tool
 
@@ -36,6 +38,7 @@ Check if it works
 ./sendmail.phar --help
 ````
 
+
 ## Update `php.ini`
 
 Edit the `cli`, `apache` or both `php.ini` files.
@@ -46,7 +49,6 @@ sendmail_path = "/path/to/phar/sendmail.phar"
 ````
 
 The [`sendmail_path`](http://php.net/manual/en/ini.list.php) is a **[PHP_INI_SYSTEM](http://php.net/manual/en/configuration.changes.modes.php)** `changeable` type which means you can only change it in the `php.ini` file or in the `httpd.conf` file.
-
 
 
 # Config file
@@ -128,6 +130,7 @@ debug: 0
 
 
 # Sample config files
+
 
 ## Gmail
 
