@@ -74,8 +74,8 @@ class UpdateCommand extends Command
 
         $updater = new Updater(null, false);
         $updater->setStrategy(Updater::STRATEGY_GITHUB);
-        $updater->getStrategy()->setPackageName('smalot/carbon14');
-        $updater->getStrategy()->setPharName('carbon14.phar');
+        $updater->getStrategy()->setPackageName('smalot/sendmail-smtp');
+        $updater->getStrategy()->setPharName('sendmail.phar');
         $updater->getStrategy()->setCurrentLocalVersion($currentVersion);
         $updater->getStrategy()->setStability('stable');
 

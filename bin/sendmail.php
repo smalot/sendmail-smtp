@@ -30,6 +30,7 @@ include __DIR__.'/../vendor/autoload.php';
 use Monolog\Handler\SyslogHandler;
 use Monolog\Logger;
 use Smalot\Smtp\Sendmail\Commands\SendCommand;
+use Smalot\Smtp\Sendmail\Commands\UpdateCommand;
 use Symfony\Component\Console\Application;
 
 $handler = new SyslogHandler('sendmail');
@@ -38,5 +39,6 @@ $command = new SendCommand($logger);
 
 $application = new Application('sendmail-smtp', '@git-version@');
 $application->add($command);
+$application->add(new UpdateCommand());
 $application->setDefaultCommand('send');
 $application->run();
