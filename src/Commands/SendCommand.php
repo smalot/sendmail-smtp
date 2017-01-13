@@ -115,11 +115,7 @@ class SendCommand extends Command
 
             switch ($key) {
                 case 'debug':
-                    $phpMailer->SMTPDebug = boolval($value);
-                    break;
-
-                case 'debug_output':
-                    $phpMailer->Debugoutput = $value;
+                    $phpMailer->SMTPDebug = $value;
                     break;
 
                 case 'host':
@@ -148,6 +144,10 @@ class SendCommand extends Command
 
                 case 'auto_tls':
                     $phpMailer->SMTPAutoTLS = $value;
+                    break;
+
+                case 'auth':
+                    $phpMailer->SMTPAuth = boolval($value);
                     break;
 
                 case 'auth_type':

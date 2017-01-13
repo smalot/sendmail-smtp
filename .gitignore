@@ -4,3 +4,5 @@
 /composer.lock
 /debug*
 /sendmail*
+/test*
+

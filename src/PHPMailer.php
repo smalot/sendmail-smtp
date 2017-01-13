@@ -45,7 +45,7 @@ class PHPMailer extends \PHPMailer
     public function parseMessage($message)
     {
         if (preg_match('/^(.*?)(\n\n|\r\r|\r\n\r\n)(.*)$/ms', $message, $match)) {
-            $this->MIMEHeader = $match[1];
+            $this->MIMEHeader = trim($match[1]).self::CRLF.self::CRLF;
             $this->MIMEBody = $match[3];
 
             // Parse headers and set values.
@@ -110,6 +110,10 @@ class PHPMailer extends \PHPMailer
                         foreach ($this->parseAddresses($value) as $address) {
                             $this->addAddress($address['address'], $address['name']);
                         }
+                        break;
+
+                    case 'subject':
+                        $this->Subject = $value;
                         break;
                 }
             }
