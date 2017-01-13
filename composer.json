@@ -1,0 +1,27 @@
+{
+    "name": "smalot/sendmail-smtp",
+    "description" : "Sendmail wrapper to send mail via SMTP",
+    "keywords": ["smtp", "sendmail", "event"],
+    "license" : "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Sebastien Malot",
+            "email": "sebastien@malot.fr"
+        }
+    ],
+    "require": {
+        "symfony/event-dispatcher": "^3.2",
+        "symfony/console": "^3.2",
+        "phpmailer/phpmailer": "^5.2",
+        "monolog/monolog": "^1.22",
+        "symfony/yaml": "^3.2",
+        "padraic/phar-updater": "^1.0",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+        "psr-4" : {
+            "Smalot\\Smtp\\Sendmail\\" : ["src"]
+        }
+    }
+}

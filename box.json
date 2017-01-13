@@ -1,0 +1,29 @@
+{
+  "alias": "sendmail.phar",
+  "chmod": "0755",
+  "directories": [
+    "bin",
+    "src"
+  ],
+  "files": [
+    "LICENSE",
+    "README.md"
+  ],
+  "finder": [
+    {
+      "in": "vendor",
+      "name": ["*.php", "*.xml", "*.xsd", "*.yml", "*.json"],
+      "exclude": ["Tests", ".git"]
+    }
+  ],
+  "git-commit": "git-commit",
+  "git-version": "git-version",
+  "main": "bin/sendmail.php",
+  "algorithm": "SHA512",
+  "compression": "GZ",
+  "output": "sendmail-@git-version@.phar",
+  "replacements": {
+    "@git-version@": "@git-version@"
+  },
+  "stub": true
+}
