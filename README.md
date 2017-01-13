@@ -32,10 +32,10 @@ And enable execution flag
 chmod +x sendmail.phar
 ````
 
-Check if it works
+Check if it works by displaying version
 
 ````sh
-./sendmail.phar --help
+./sendmail.phar list
 ````
 
 
