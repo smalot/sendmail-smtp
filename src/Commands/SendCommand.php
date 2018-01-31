@@ -146,6 +146,10 @@ class SendCommand extends Command
                     $phpMailer->Host = $value;
                     break;
 
+                case 'domain':
+                    $phpMailer->Helo = $value;
+                    break;
+
                 case 'port':
                     $phpMailer->Port = $value;
                     break;
